@@ -71,5 +71,10 @@ function checkWinner() {
 }
 
 function restartGame() {
+    currentPlayer = "X"; //definir o jogador atual
+    options = ["", "", "", "", "", "", "", "", ""]; //definir as opções
+    statusText.textContent = `É a vez do ${currentPlayer} !`; //atualizar o texto do status
+    cells.forEach(cell => cell.textContent = ""); //atualizar o texto das células para vazio
+    running = true; //definir o inicio do jogo novamente
 
 }
