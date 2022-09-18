@@ -1,6 +1,6 @@
 const cells = document.querySelectorAll(".cell"); //selecione todas as células
-const statusText = document.querySelector("#statustext"); //selecione o status
-const restartButton = document.querySelector("#restartBtn"); //selecione o botão de reiniciar
+const statusText = document.querySelector("#statusText"); //selecione o status
+const restartBtn = document.querySelector("#restartBtn"); //selecione o botão de reiniciar
 const winConditions = [
     //condições de vitória
     [0, 1, 2],
@@ -20,12 +20,12 @@ let running = false;
 initializeGame();
 
 function initializeGame() {
-    cells.forEach(cell => cell.addEventListener("click, cellClicked")); //adicionar evento de clique
-    restartButton.addEventListener("click", restartGame); //adicionar evento de clique
+    cells.forEach(cell => cell.addEventListener("click", cellClicked)); //adicionar evento de clique
+    restartBtn.addEventListener("click", restartGame); //adicionar evento de clique
     statusText.textContent = `É a vez do ${currentPlayer} !`; //atualizar o texto do status
     running = true; //definir o inicio do jogo
-}
-function CellClicked() {
+}   
+function cellClicked() {
     const cellIndex = this.getAttribute("cellIndex"); //obter o índice da célula que esta sendo clicada
     if (options[cellIndex] !== "" || !running) { //se a celula não estiver vazia ou se o jogo não estiver em execução
         return;
